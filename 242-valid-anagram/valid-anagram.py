@@ -5,13 +5,11 @@ class Solution(object):
         :type t: str
         :rtype: bool
         """
- 
 
         if len(s) != len(t):
             return False
 
         freq = {}
-        freq2 = {}
 
         for i in range(len(s)):
             if s[i] not in freq:
@@ -19,11 +17,14 @@ class Solution(object):
             else:
                 freq[s[i]] += 1
 
-        for j in range(len(t)):
-            if t[j] not in freq2:
-                freq2[t[j]] = 1
+            if t[i] not in freq:
+                freq[t[i]] = -1
             else:
-                freq2[t[j]] += 1
+                freq[t[i]] -= 1
 
-        return freq == freq2
+        for value in freq.values():
+            if value != 0:
+                return False
+
+        return True
         
