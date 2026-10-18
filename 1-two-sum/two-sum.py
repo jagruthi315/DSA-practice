@@ -5,9 +5,19 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        for i in range (len(nums)):
-            for j in range(i+1 , len(nums)):
-               
-             if nums[i]+nums[j] == target:
-                return[i,j]
+        
+        n = len(nums)
+        for i  in range(n):
+            j=i+1
+            
+            while j<n:
                 
+                if nums[i]+nums[j]==target:
+                    return [i,j]
+                j+=1
+            
+                
+
+
+            
+           
