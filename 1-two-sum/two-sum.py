@@ -5,17 +5,17 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
+       
+            
+        dicton={}
+        for  i in range(len(nums)):
+         
+            if target - nums[i] in dicton:
         
-        n = len(nums)
-        for i  in range(n):
-            j=i+1
-            
-            while j<n:
-                
-                if nums[i]+nums[j]==target:
-                    return [i,j]
-                j+=1
-            
+                return[i, dicton[target-nums[i]]]
+            else:
+                dicton[nums[i]] = i
+        return "not found"
                 
 
 
